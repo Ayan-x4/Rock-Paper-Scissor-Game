@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors Game By Ayan Dev</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+
+  .head {
+    align-items: center;
+    text-align: center;
+    margin-top: 2rem;
+    text-decoration: underline 4px rgb(255, 255, 255);
+    color: #ffffff;
+    text-underline-offset: 10px;
+  }
+  body{
+    background: linear-gradient(45deg, #101010,#181818,#121212);
+  }
+
+  .container {
+    display: flex;
+    /* background-color: rgb(39, 39, 39); */
+    background-image: url(./4851806.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 30rem;
+    width: 35em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    box-shadow: 1px 1px 1px 12px  gold;
+
+  }
+
+  .heading {
+    height: 2rem;
+    color: rgb(255, 255, 255);
+    text-shadow: black 1px 0px 10px;
+    display: flex;
+    text-align: center;
+    align-content: center;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    text-decoration: underline dashed 2px rgb(255, 255, 255);
+    font-size: x-large;
+    text-underline-offset: 10px;
+  }
+
+  .heading2 {
+    height: 2rem;
+    color: rgb(255, 230, 0);
+    text-shadow: black 1px 0px 10px;
+    text-align: center;
+    align-content: center;
+    position: absolute;
+    top: 50%;
+    left: 690%;
+    transform: translate(-50%, -50%);
+    text-decoration: underline dashed 2px rgb(255, 255, 255);
+    font-size: x-large;
+    text-underline-offset: 10px;
+    
+  }
+
+  .img1 {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 78%;
+    transform: translate(-50%, -50%);
+    /* background-color: rgb(255, 255, 255); */
+   
+
+  }
+
+  .img2 {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 21%;
+    padding-inline-end: ;
+    transform: translate(-50%, -50%);
+    /* background-color: rgb(255, 255, 255); */
+     
+  }
+
+
+  .itemms {
+    display: flex;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+  }
+
+  .itemms img {
+    height: 4rem;
+
+  }
+
+  .item1 {
+    position: absolute;
+    top: 85%;
+    left: 37%;
+    transform: translate(-50%, -50%);
+    padding: 8px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 30%;
+    transition: 0.3s ease;
+    cursor: pointer;
+  }
+
+  .item1:hover {
+    background: linear-gradient(45deg, #DCE35B, #45B649);
+  }
+
+  .item1:active {
+    transform: scale(-1.0);
+  }
+
+  .item2:hover {
+    background: linear-gradient(45deg, #DCE35B, #45B649);
+  }
+
+  .item2:active {
+    transform: scale(-1.0);
+  }
+
+  .item3:hover {
+    background: linear-gradient(45deg, #DCE35B, #45B649);
+  }
+
+  .item3:active {
+    transform: scale(-1.0);
+  }
+
+  #R {
+    height: 2rem;
+  }
+
+  .item2 {
+    position: absolute;
+    top: 85%;
+    left: 48.5%;
+    transform: translate(-50%, -50%);
+    padding: 8px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 30%;
+    transition: 0.3s ease;
+    cursor: pointer;
+
+  }
+
+  #P {
+    height: 2rem;
+  }
+
+  .item3 {
+    position: absolute;
+    top: 85%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    padding: 8px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 30%;
+    transition: 0.3s ease;
+    cursor: pointer;
+
+  }
+
+  #S {
+    height: 2rem;
+  }
+
+  .element {
+    display: flex;
+    position: absolute;
+    top: 85%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border: 4px solid black;
+    border-style: dashed;
+    border-color: #ff9602;
+
+  }
+
+  .element2 {
+   display: flex;
+    position: absolute;
+    top: 85%;
+    left: 78%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border: 4px solid black;
+    border-style:dashed;
+    border-color: #ff3300;
+}
+#input2{
+    width: 4rem;
+    height: 2rem;
+    font-size: x-large;
+    text-shadow: 1px 0px 1px black;
+    border-style: none;
+    color: #ff0000;
+    font-weight: bold;
+    margin: 3px;
+    text-align: center;
+    background-color: #2d2d2d;
+}
+#span2{
+    text-align: center;
+    font-size: 38px;
+    background-color: #2d2d2d;
+    color: #00fff2;
+    text-shadow: 0px 1px 0px rgb(0, 0, 0);
+    padding: 0.6rem;
+    font-weight: bolder;
+}
+
+  input {
+    width: 4rem;
+    height: 2rem;
+    font-size: x-large;
+    text-shadow: 1px 0px 1px black;
+    border-style: none;
+    color: #ff0000;
+    font-weight: bold;
+    margin: 3px;
+    text-align: center;
+    background-color: #2d2d2d;
+  }
+
+  span {
+    text-align: center;
+    font-size: 38px;
+    background-color: #2d2d2d;
+    color: #00fff2;
+    text-shadow: 0px 1px 0px rgb(0, 0, 0);
+    padding: 0.6rem;
+    font-weight: bolder;
+  }
+</style>
+
+<body>
+  <main>
+    <h1 class="head">
+     Rock Paper Scissors Game By Ayan Dev
+    </h1>
+    <div class="container">
+      <div class="items heading">
+        <h3>You</h3>
+        <h3 class="heading2">Computer</h3>
+      </div>
+      <div class="items img1">
+        <img class="comp1" src="comp" alt="">
+      </div>
+      <div class="items img1">
+        <img class="comp2" src="comp1" alt="">
+      </div>
+      <div class="items img1">
+        <img class="comp3" src="comp2" alt="">
+      </div>
+      <div class="items img2">
+        <img class="youu"  src="hand" alt="">
+      </div>
+      <div class="items img2">
+        <img class="youuu"  src="paper" alt="">
+      </div>
+      <div class="items img3">
+        <img class="youuuu"  src="secissor" alt="">
+      </div>
+      <div class="item1">
+        <img id="R" src="https://cdn-icons-png.flaticon.com/128/3100/3100127.png" alt="">
+      </div>
+      <div class="item2">
+        <img id="P" src="https://cdn-icons-png.flaticon.com/128/12355/12355903.png" alt="">
+      </div>
+      <div class="item3">
+        <img id="S" src="https://cdn-icons-png.flaticon.com/128/9534/9534501.png" alt="">
+      </div>
+      <div class="element">
+        <span id="span1"><input class="input1" type="text"></span>
+      </div>
+      <div class="element2">
+        <span id="span2"><input class="input2" type="text"></span>
+      </div>
+    </div>
+
+  </main>
+
+</body>
+<script>
+  let item1 = document.querySelector(".item1")
+  let item2 = document.querySelector(".item2")
+  let item3 = document.querySelector(".item3")
+  let rock = document.querySelector("#R")
+  let img = document.querySelector(".youu")
+  let img1 = document.querySelector(".youuu")
+  let img2 = document.querySelector(".youuuu")
+  let imgcomp1 = document.querySelector(".comp1")
+  let imgcomp2 = document.querySelector(".comp2")
+  let imgcomp3 = document.querySelector(".comp3")
+ 
+  
+  let random = function(){
+   let a = (Math.floor(Math.random()*(3-1+1)+1))
+    return a
+  }
+  
+ 
+  item1.addEventListener("click",()=>{
+    let r = random()
+    console.log(r)
+  let input1 = document.querySelector(".input1")
+  let input2 = document.querySelector(".input2")
+  
+  if (r === 2) {
+    input1.value = "Win";
+    input1.style.color = "#51ff00"
+    input2.value = "Loss"
+    input2.style.color = "red"
+   }
+   else if(r === 1){
+    input1.value = "loss";
+    input1.style.color = "red"
+    input2.value = "Win"
+    input2.style.color = "#51ff00"
+    
+   }
+   else{
+    input1.value = "draw";
+    input1.style.color = "#ff9602"
+    input2.value = "draw";
+    input2.style.color = "#ff9602"
+   }
+    img.src = "right to left1 .png";
+    img.style.width = "12.5rem";
+    img.style.height = "12.5rem";
+
+  
+  
+  if(r === 1 ){
+    imgcomp2.style.display = "none";
+    imgcomp3.style.display = "none";
+    imgcomp1.style.display = "block";
+    imgcomp1.src = "comp-paper.png";
+    imgcomp1.style.width = "12.5rem";
+    imgcomp1.style.height = "12.5rem";
+    
+    }
+  else if( r===2){
+    imgcomp1.style.display = "none";
+    imgcomp3.style.display = "none";
+    imgcomp2.style.display = "block";
+    imgcomp2.src = "comp-secissor.png";
+    imgcomp2.style.width = "12.5rem";
+    imgcomp2.style.height = "12.5rem";}
+  else if(r === 3){
+    imgcomp1.style.display = "none";
+    imgcomp2.style.display = "none";
+    imgcomp3.style.display = "block";
+    imgcomp3.src = "comp-rock.png";
+    imgcomp3.style.width = "12.5rem";
+    imgcomp3.style.height = "12.5rem";}
+  
+    
+
+  
+  
+  })
+ 
+item2.addEventListener("click",()=>{
+  let r = random()
+  console.log(r)
+   let input1 = document.querySelector(".input1")
+  let input2 = document.querySelector(".input2")
+  
+  if (r === 3) {
+    input1.value = "Win";
+    input1.style.color = "#51ff00"
+    input2.value = "Loss"
+    input2.style.color = "red"
+   }
+   else if(r === 2){
+    input1.value = "loss";
+    input1.style.color = "red"
+    input2.value = "Win"
+    input2.style.color = "#51ff00"
+    
+   }
+   else{
+    input1.value = "draw";
+    input1.style.color = "#ff9602"
+    input2.value = "draw";
+    input2.style.color = "#ff9602"
+   }
+     img.src = "paper11.png";
+    img.style.width = "12.5rem";
+    img.style.height = "12.5rem";
+
+    if(r === 1 ){
+    imgcomp2.style.display = "none";
+    imgcomp3.style.display = "none";
+    imgcomp1.style.display = "block";
+    imgcomp1.src = "comp-paper.png";
+    imgcomp1.style.width = "12.5rem";
+    imgcomp1.style.height = "12.5rem";
+
+    
+    }
+  else if( r===2){
+    imgcomp1.style.display = "none";
+    imgcomp3.style.display = "none";
+    imgcomp2.style.display = "block";
+    imgcomp2.src = "comp-secissor.png";
+    imgcomp2.style.width = "12.5rem";
+    imgcomp2.style.height = "12.5rem";}
+  else if(r === 3){
+    imgcomp1.style.display = "none";
+    imgcomp2.style.display = "none";
+    imgcomp3.style.display = "block";
+    imgcomp3.src = "comp-rock.png";
+    imgcomp3.style.width = "12.5rem";
+    imgcomp3.style.height = "12.5rem";}
+
+   
+}
+
+
+)
+item3.addEventListener("click",()=>{
+  let r = random()
+  console.log(r)
+   let input1 = document.querySelector(".input1")
+  let input2 = document.querySelector(".input2")
+  
+  if (r === 1) {
+    input1.value = "Win";
+    input1.style.color = "#51ff00"
+    input2.value = "Loss"
+    input2.style.color = "red"
+   }
+   else if(r === 3){
+    input1.value = "loss";
+    input1.style.color = "red"
+    input2.value = "Win"
+    input2.style.color = "#51ff00"
+    
+   }
+   else{
+    input1.value = "draw";
+    input1.style.color = "#ff9602"
+    input2.value = "draw";
+    input2.style.color = "#ff9602"
+   }
+    img.src = "secissor11.png";
+    img.style.width = "12.5rem";
+    img.style.height = "12.5rem";
+  
+  if(r === 1 ){
+    imgcomp2.style.display = "none";
+    imgcomp3.style.display = "none";
+    imgcomp1.style.display = "block";
+    imgcomp1.src = "comp-paper.png";
+    imgcomp1.style.width = "12.5rem";
+    imgcomp1.style.height = "12.5rem";
+    
+    }
+  else if( r===2){
+    imgcomp1.style.display = "none";
+    imgcomp3.style.display = "none";
+    imgcomp2.style.display = "block";
+    imgcomp2.src = "comp-secissor.png";
+    imgcomp2.style.width = "12.5rem";
+    imgcomp2.style.height = "12.5rem";}
+  else if(r === 3){
+    imgcomp1.style.display = "none";
+    imgcomp2.style.display = "none";
+    imgcomp3.style.display = "block";
+    imgcomp3.src = "comp-rock.png";
+    imgcomp3.style.width = "12.5rem";
+    imgcomp3.style.height = "12.5rem";}
+
+     
+   
+})
+
+
+</script>
+
+</html>
